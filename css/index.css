@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee+Inline");
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  position: relative;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444;
+  overflow: hidden;
+  /* CONSOLE STYLES */
+}
+
+.video-con {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	* {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	video {
+		filter: saturate(0%);
+	}
+
+	.video-overlay {
+		background-color: #77f7;
+	}
+}
+
+body button {
+  outline: none;
+}
+
+body .centered {
+  width: 600px;
+  min-height: 310px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid #222;
+  padding: 20px;
+  -webkit-box-shadow: 5px 5px 3px #777d;
+          box-shadow: 5px 5px 3px #777d;
+  background-color: #fff;
+}
+
+body .centered h1 {
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+  -webkit-text-decoration-style: double;
+          text-decoration-style: double;
+  font-size: 2rem;
+}
+
+body .centered .inline {
+  text-align: center;
+}
+
+body .centered .inline span {
+  font-family: "Bungee Inline";
+  color: #e10000;
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+body .centered .inline input, body .centered .inline span {
+  font-size: 1.25rem;
+  padding: 10px 20px;
+  outline: none;
+}
+
+body .centered #game_settings {
+  margin-top: 50px;
+}
+
+body .centered button {
+  font-size: 1.25rem;
+  padding: 7.5px 15px;
+}
+
+body .centered .btn {
+  background: #222;
+  color: white;
+  text-transform: uppercase;
+  border-color: #222;
+  font-weight: bold;
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+  cursor: pointer;
+}
+
+body .centered .btn:hover, body .centered .btn:active {
+  opacity: 0.8;
+}
+
+body .centered .noBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+body .centered p {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+body .centered p#prevNums {
+  font-style: italic;
+  font-weight: bold;
+  text-align: left;
+  font-size: 16px;
+  max-height: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body .centered p#prevNums::before {
+  content: "Previous numbers: ";
+  font-style: normal;
+  font-weight: normal;
+}
+
+body .centered p#status {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+body .centered #audio-player #audio-symbols #audio-play-box {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #222;
+  border-radius: 50%;
+}
+
+body .centered #audio-player #audio-symbols div:not(#audio-play-box) i {
+  margin: 0 10px;
+}
+
+body .centered #audio-player #audio-symbols i {
+  font-size: 3rem;
+}
+
+body .centered #audio-player #audio-symbols i.fa-volume-up {
+  font-size: 1.5rem;
+}
+
+body #settings {
+  width: 600px;
+  height: 700px;
+  overflow-y: scroll;
+}
+
+body #settings section {
+  padding: 10px;
+  margin-top: 5vh;
+}
+
+body #settings button {
+  font-size: 25px;
+  background: none;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100px;
+  height: 50px;
+  color: white;
+  font-family: "Segoe UI Black";
+  font-size: 25px;
+  margin: 0;
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+  cursor: pointer;
+}
+
+body #settings button.selected {
+  border: 3px solid #222;
+}
+
+body #settings button:hover {
+  opacity: 0.7;
+}
+
+body #settings .setting-lifes button:nth-child(1) {
+  background: rgba(225, 0, 0, 0.4);
+}
+
+body #settings .setting-lifes button:nth-child(2) {
+  background: rgba(225, 0, 0, 0.5);
+}
+
+body #settings .setting-lifes button:nth-child(3) {
+  background: rgba(225, 0, 0, 0.6);
+}
+
+body #settings .setting-lifes button:nth-child(4) {
+  background: rgba(225, 0, 0, 0.7);
+}
+
+body #settings .setting-lifes button:nth-child(5) {
+  background: rgba(225, 0, 0, 0.8);
+}
+
+body #settings .setting-range button:nth-child(1) {
+  background: rgba(150, 150, 150, 0.4);
+}
+
+body #settings .setting-range button:nth-child(2) {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+body #settings .setting-range button:nth-child(3) {
+  background: rgba(150, 150, 150, 0.6);
+}
+
+body #settings .setting-range button:nth-child(4) {
+  background: rgba(150, 150, 150, 0.7);
+}
+
+body #settings .setting-range button:nth-child(5) {
+  background: rgba(150, 150, 150, 0.8);
+}
+
+body #settings .setting-decimalpts button:nth-child(1) {
+  background: rgba(193, 155, 98, 0.4);
+}
+
+body #settings .setting-decimalpts button:nth-child(2) {
+  background: rgba(193, 155, 98, 0.5);
+}
+
+body #settings .setting-decimalpts button:nth-child(3) {
+  background: rgba(193, 155, 98, 0.6);
+}
+
+body #settings .setting-decimalpts button:nth-child(4) {
+  background: rgba(193, 155, 98, 0.7);
+}
+
+body #settings .setting-decimalpts button:nth-child(5) {
+  background: rgba(193, 155, 98, 0.8);
+}
+
+body #settings .setting-timer button:nth-child(1) {
+  background: rgba(97, 198, 143, 0.4);
+}
+
+body #settings .setting-timer button:nth-child(2) {
+  background: rgba(97, 198, 143, 0.5);
+}
+
+body #settings .setting-timer button:nth-child(3) {
+  background: rgba(97, 198, 143, 0.6);
+}
+
+body #settings .setting-timer button:nth-child(4) {
+  background: rgba(97, 198, 143, 0.7);
+}
+
+body #settings .setting-timer button:nth-child(5) {
+  background: rgba(97, 198, 143, 0.8);
+}
+
+body #settings .deactivated {
+	color: #888;
+}
+
+body #console {
+  width: 800px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+body #console #terminal {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body #console #terminal #input {
+  width: 100%;
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 50px;
+}
+
+body #console #terminal #output {
+  padding: 5px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.grid-two-c-xl {
+  -ms-grid-columns: 80% 20%;
+      grid-template-columns: 80% 20%;
+}
+
+.grid-two-c-b {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.grid-two-c-l {
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  width: 100%;
+}
+
+.grid-two-c-r {
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+  width: 100%;
+}
+
+.window {
+  border: 1px solid #222;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  z-index: 2;
+  padding: 10px;
+}
+
+.window h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+}
+
+.window h3 {
+  margin: 0;
+  font-size: 28px;
+  text-align: center;
+  line-height: 2em;
+}
+
+.close {
+  background: #e10000;
+  color: white;
+  font-weight: bolder;
+  width: 50%;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  cursor: pointer;
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+.close:hover {
+  opacity: 0.75;
+}
+
+.toggler label:first-child {
+  font-size: 1.5rem;
+}
+
+.toggler .switch {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  width: 100px;
+}
+
+.toggler .switch input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.toggler .switch input:checked + span {
+  background: rgba(225, 0, 0, 0.75);
+}
+
+.toggler .switch input:checked + span:before {
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
+}
+
+.toggler .switch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background: #ccc;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 20px;
+}
+.toggler .switch input[disabled] + span {
+	background-color: #888;
+	cursor: not-allowed;
+}
+
+.toggler .switch span:before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 5px;
+  top: 5px;
+  background: #fff;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes comingFromRight {
+  from {
+    -webkit-transform: translate(150vh, -50%);
+            transform: translate(150vh, -50%);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes comingFromRight {
+  from {
+    -webkit-transform: translate(150vh, -50%);
+            transform: translate(150vh, -50%);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@-webkit-keyframes leavingToRight {
+  from {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  to {
+    -webkit-transform: translate(150vh, -50%);
+            transform: translate(150vh, -50%);
+  }
+}
+
+@keyframes leavingToRight {
+  from {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  to {
+    -webkit-transform: translate(150vh, -50%);
+            transform: translate(150vh, -50%);
+  }
+}
+
+@media (max-width: 650px) {
+  body .centered {
+    width: 300px;
+
+    .inline * {
+      margin: 1rem 0;
+    }
+  }
+
+  body #settings {
+    width: 300px;
+    height: 600px;
+
+    h2 span {
+      display: none;
+    }
+    .close {
+      width: 100%;
+    }
+
+    .flex {
+      display: block;
+      text-align: center;
+    }
+
+    button {
+      margin: 0.25em 0.5em;
+    }
+  }
+}
+@media (max-width: 1300px) {
+  #consoleOpen {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=sassy.css.map */

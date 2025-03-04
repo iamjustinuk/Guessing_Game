@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+
+$settingBorder: 2px solid #222;
+
+body{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+    overflow: hidden;
+
+    button{outline: none;}
+
+    .centered{
+        width: 600px;
+        min-height: 310px;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #222;
+        padding: 20px;
+        box-shadow: 5px 5px 3px #777;
+
+        h1{
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-style: double;
+            font-size: 2rem;
+        }
+        
+        .inline{
+            text-align: center;
+
+            span{
+                font-family: "Bungee Inline";
+                color: rgb(225,0,0);
+                margin: 0;
+                font-size: 1.75rem;
+            }
+
+            input, span{
+                font-size: 1.25rem;
+                padding: 10px 20px;
+                outline: none;
+            }
+        }
+
+        #game_settings{
+            margin-top: 50px;
+        }
+
+        button{
+            font-size: 1.25rem;
+            padding: 7.5px 15px;
+        }
+        .btn{
+            background: #222;
+            color: white;
+            text-transform: uppercase;
+            border-color: #222;
+            font-weight: bold;
+            transition: opacity .15s linear;
+            cursor: pointer;
+
+            &:hover, &:active{
+                opacity: 0.8;
+            }
+        }
+        .noBtn{
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        p{
+            text-align: center;
+            font-size: 1.25rem;
+
+            &#prevNums{
+                font-style: italic;
+                font-weight: bold;
+                text-align: left;
+                font-size: 16px;
+                max-height: 100px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+            &#prevNums::before{
+                content: "Previous numbers: ";
+                font-style: normal;
+                font-weight: normal;
+            }
+
+            &#status{
+                color: white;
+                font-weight: bold;
+                padding: 5px 10px;
+            }
+        }
+
+        #audio-player{
+
+            #audio-symbols{
+
+
+                #audio-play-box{
+                    width: 80px;
+                    height: 80px;
+                    border: 3px solid #222;
+                    border-radius: 50%;
+                }
+                div:not(#audio-play-box) i{
+                    margin: 0 10px;
+                }
+                i{
+                    font-size: 3rem;
+
+                    &.fa-volume-up{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    #settings{
+        width: 600px;
+        height: 700px;
+        overflow-y: scroll;
+
+        section{
+            padding: 10px;
+            margin-top: 5vh;
+        }
+
+        button{
+            font-size: 25px;
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            width: 100px;
+            height: 50px;
+            color: white;
+            font-family: "Segoe UI Black";
+            font-size: 25px;
+            margin: 0;
+            transition: opacity .15s linear;
+            cursor: pointer;
+
+            &.selected{
+                border: 3px solid #222;
+            }
+
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+
+        .setting-lifes button{
+            &:nth-child(1){background: rgba(225,0,0,0.4);}
+            &:nth-child(2){background: rgba(225,0,0,0.5);}
+            &:nth-child(3){background: rgba(225,0,0,0.6);}
+            &:nth-child(4){background: rgba(225,0,0,0.7);}
+            &:nth-child(5){background: rgba(225,0,0,0.8);}
+        }
+        .setting-range button{
+            &:nth-child(1){background: rgba(150,150,150,0.4);}
+            &:nth-child(2){background: rgba(150,150,150,0.5);}
+            &:nth-child(3){background: rgba(150,150,150,0.6);}
+            &:nth-child(4){background: rgba(150,150,150,0.7);}
+            &:nth-child(5){background: rgba(150,150,150,0.8);}
+        }
+        .setting-decimalpts button{
+            &:nth-child(1){background: rgba(193, 155, 98,0.4);}
+            &:nth-child(2){background: rgba(193, 155, 98,0.5);}
+            &:nth-child(3){background: rgba(193, 155, 98,0.6);}
+            &:nth-child(4){background: rgba(193, 155, 98,0.7);}
+            &:nth-child(5){background: rgba(193, 155, 98,0.8);}
+        }
+        .setting-timer button{
+            &:nth-child(1){background: rgba(97, 198, 143,0.4);}
+            &:nth-child(2){background: rgba(97, 198, 143,0.5);}
+            &:nth-child(3){background: rgba(97, 198, 143,0.6);}
+            &:nth-child(4){background: rgba(97, 198, 143,0.7);}
+            &:nth-child(5){background: rgba(97, 198, 143,0.8);}
+        }
+    }
+
+
+
+
+
+    /* CONSOLE STYLES */
+    #console{
+        width: 800px;
+        height: 500px;
+        overflow-y: scroll;
+
+        #terminal{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            position: relative;
+            box-sizing: border-box;
+
+            #input{
+                width: 100%;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                height: 50px;
+            }
+
+            #output{
+                padding: 5px 10px;
+                box-sizing: border-box;
+                
+            }
+        }
+    }
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid{display: grid;}
+.grid-two-c-xl{grid-template-columns: 80% 20%;}
+.grid-two-c-b{grid-template-columns: 1fr 1fr; width:100%;}
+.grid-two-c-l{grid-template-columns: 70% 30%; width: 100%;}
+.grid-two-c-r{grid-template-columns: 30% 70%; width: 100%;}
+.window{
+    border: 1px solid #222;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 2;
+    padding: 10px;
+
+    h2{
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        font-size: 35px;
+    }
+
+    h3{
+        margin: 0;
+        font-size: 28px;
+        text-align: center;
+        line-height: 2em;
+    }
+}
+.close{
+    background: rgb(225,0,0);
+    color: white;
+    font-weight: bolder;
+    width: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    cursor: pointer;
+    transition: opacity .15s linear;
+
+    &:hover{
+        opacity: 0.75;
+    }
+}
+
+.toggler{
+
+    label:first-child{
+        font-size: 1.5rem;
+    }
+
+    .switch{
+        position: relative;
+        display: inline-block;
+        height: 40px;
+        width: 100px;
+
+        input{
+            opacity: 0;
+            height: 0;
+            width: 0;
+
+            &:checked + span{
+                background: rgba(225,0,0,0.75);
+            }
+            &:checked + span:before{
+                transform: translateX(60px);
+            }
+        }
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+            background: #ccc;
+            transition: .5s;
+            border-radius: 20px;
+
+            &:before{
+                content: "";
+                position: absolute;
+                height: 30px;
+                width: 30px;
+                left: 5px;
+                top: 5px;
+                background: #fff;
+                transition: .5s;
+                border-radius: 50%;
+            }
+        }
+
+    }
+}
+
+
+
+@keyframes comingFromRight{
+    from{
+        transform: translate(150vh, -50%);
+    }
+    to{
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes leavingToRight{
+    from{
+        transform: translate(-50%, -50%);
+    }
+    to{
+        transform: translate(150vh, -50%);
+    }
+}
